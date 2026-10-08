@@ -1,0 +1,6 @@
+Disk model: RPFTJ256PDD2MWX
+Type: SSD (NVMe)
+Space: 35+ GB
+BIOS version: LENOVO ALCN27WW(V2.04), 02.07.2019
+BIOS Mode: UEFI
+hardware virtulizatio: on

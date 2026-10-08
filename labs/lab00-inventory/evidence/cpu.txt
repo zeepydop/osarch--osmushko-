@@ -1,0 +1,4 @@
+CPU model: Intel(R) Pentium(R) CPU 5405U@ 2.30 GHz
+Cores: 2
+Threads: 4
+Virtualization: Enabled

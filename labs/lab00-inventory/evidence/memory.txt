@@ -1,0 +1,3 @@
+total memory: 4 GB
+speed: 2133MHz
+Cores installed: 1 of 2
