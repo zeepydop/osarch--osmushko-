@@ -31,4 +31,7 @@ It was crashing every time & the last part of the installation took ages to comp
 
 ## Evidence
 
-- [evidence/](evidence/) — one line per file on what it proves
+- [evidence/vm-settings.png](evidence/vm-settings/) — CPU, memory and disk as configured
+- [evidence/guest-release.txt](evidence/guest-release.png) — Ubuntu Server is running in the guest
+- [evidence/broken.png](evidence/broken.png) — the guest in its broken state
+- [evidence/snapshot-list.png](evidence/snapshot-list.png) — the snapshot, after the rollback
