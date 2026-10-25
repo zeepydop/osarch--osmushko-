@@ -21,5 +21,6 @@ I didn't understand at first what was needed from me, Iasked the professor and u
 
 ## Evidence
 
-- [evidence/](evidence/) — one line per file on what it proves
-- https://github.com/zeepydop/osarch--osmushko-/blob/dd65572ef8bd17d7e2b079cc4b60fa1f724e2f65/labs/lab00-inventory/evidence/cpu.txt
+- [evidence/cpu.txt](evidence/cpu.txt) — CPU
+- [evidence/disk.txt](evidence/disk.txt) — Disk
+- [evidence/memory.txt](evidence/memory.txt) — Memory
