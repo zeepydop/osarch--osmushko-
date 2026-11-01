@@ -44,7 +44,6 @@ Full step-by-step instructions with screenshots are in [BUILD.md](BUILD.md). Sum
 | Disk | 25 GB / 64 GB, dynamic | Minimums for each OS; files start small and grow |
 | Windows account | local account | No personal Microsoft account on a test machine |
 | Windows privacy options | all off | Test machine, no telemetry needed |
-| Firewall | one ICMPv4 allow rule, firewall left on | See below |
 
 
 **One thing that went wrong, and how I resolved it**
