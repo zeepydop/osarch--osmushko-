@@ -200,7 +200,7 @@ ipconfig
 ipconfig | Set-Clipboard
 ```
 
-Note the IPv4 address (`<Windows IP>`).
+Note the IPv4 address (`10.0.2.15`).
 
 **Ubuntu**:
 
