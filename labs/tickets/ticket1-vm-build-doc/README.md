@@ -47,10 +47,9 @@ Full step-by-step instructions with screenshots are in [BUILD.md](BUILD.md). Sum
 | Firewall | one ICMPv4 allow rule, firewall left on | See below |
 
 
-
 **One thing that went wrong, and how I resolved it**
 
-i dont understand everything really
+My laptop didn't fit the criteria so I took evidence supporting the Windows setup from partnering up with Inzhu, Group 6
 
 ## 4. Evidence
 
@@ -65,4 +64,5 @@ i dont understand everything really
 
 ## 5. What I would do differently
 
-- I would ask Aigerim the questions in section 2 before starting instead of assuming.
+- I would ask Aigerim the needed questions in section 2 before starting instead of assuming.
+- I would write down the Windows evaluation expiry date in the document, since the next person will otherwise be surprised after 90 days. 
