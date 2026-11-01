@@ -127,7 +127,7 @@ uname -a
 
 Expected: the Ubuntu version, your server name, 2 CPUs, your memory, about 25 GB disk, and an IP address on the network card.
 
-To save the output on the host, add a port-forwarding rule (VirtualBox cannot reach a NAT Network guest directly): **File → Tools → Network Manager → NAT Networks → your network → Port Forwarding**, add: Host Port `2222`, Guest IP = Ubuntu's address, Guest Port `22`. 
+To save the output on the host, add a port-forwarding rule (VirtualBox cannot reach a NAT Network guest directly): **File → Tools → Network Manager → NAT Networks → your network → Port Forwarding**, add: Host Port `2222`, Guest IP = Ubuntu's address(10.0.2.3), Guest Port `22`. 
 
 
 ---
@@ -208,7 +208,7 @@ Note the IPv4 address (`<Windows IP>`).
 ip -br a
 ```
 
-Note the address on the network card, not `lo` (`<Ubuntu IP>`). Save from the host:
+Note the address on the network card, not `lo` (`10.0.2.3`). Save from the host:
 
 > Why both are in the same subnet: that is what a NAT Network guarantees; guests on one network can reach each other directly.
 
@@ -218,9 +218,9 @@ Note the address on the network card, not `lo` (`<Ubuntu IP>`). Save from the ho
 
 ## Step 13. Ping both ways, and fix the firewall properly
 
-**Windows → Ubuntu.** PowerShell: `ping <Ubuntu IP>`. Replies come back, because Ubuntu's firewall is off by default.
+**Windows → Ubuntu.** PowerShell: `ping 10.0.2.3`. Replies come back, because Ubuntu's firewall is off by default.
 
-**Ubuntu → Windows.** On Ubuntu: `ping -c 4 <Windows IP>`. At first it **times out**.
+**Ubuntu → Windows.** On Ubuntu: `ping -c 4 10.0.2.15`. At first it **times out**.
 
 > Why: ping sends an ICMP echo request, and Windows Defender Firewall blocks incoming echo requests by default (the network profile of a fresh VM is usually *Public*, the strictest; check with `Get-NetConnectionProfile`).
 
