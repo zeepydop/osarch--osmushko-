@@ -1,25 +1,25 @@
 # Ticket 1 — “New developer starts Monday, needs a test machine”
 
-Pair:                     Driver first half:
-Machine:
-Date:
-
-## What I did
-
-Steps, with commands in code blocks. Not prose about the steps.
-
+## 1. What was asked
 ```
-<command>
-<output, trimmed>
+From: Aigerim T. (Office Manager)
+Subject: test machine for new dev
+Hi, we have someone starting on Monday and he needs a test computer
+set up. Nothing special, just so he can try things without breaking
+anything. Can you write down how to do it so I can do the next one
+myself? Thanks
 ```
 
-## Result
+## 2. What was actually needed
+What the request left out but the job requires. Where the request is
+wrong. What you would have asked the requester, and what you assumed
+instead of an answer.
 
-## What did not work the first time
+## 3. What I did
+Steps in order. Commands in code blocks. Decisions with reasons.
 
-At least one thing. What I saw, what it turned out to be, what I did about it.
+## 4. Evidence
+Links to evidence/ with one line each on what that file proves.
 
-## Evidence
-
-- [evidence/](evidence/) — one line per file on what it proves
-
+## 5. What I would do differently
+At least one thing. “Nothing, it all went well” is not an answe
