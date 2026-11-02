@@ -1,4 +1,4 @@
-# Ticket 1 — “New developer starts Monday, needs a test machine”
+# Ticket 1 — “VM build document”
 
 ## 1. What was asked
 ```
