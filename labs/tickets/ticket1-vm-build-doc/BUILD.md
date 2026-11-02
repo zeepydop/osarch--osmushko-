@@ -42,7 +42,7 @@ Why the evaluation ISO: it is free and legal for 90 days with no product key. Ne
 ---
 
 ## Step 3. Decide the resources (and write down why)
-![](evidence/01-new-vm-wizard)
+[screenshots](evidence/01-new-vm-wizard)
 | Resource | Ubuntu Server | Windows 11 | Why |
 |---|---|---|---|
 | vCPU | 2 | 4 | Enough for both; never more than half of the host's `N` cores |
@@ -60,7 +60,7 @@ Why the evaluation ISO: it is free and legal for 90 days with no product key. Ne
 1. VirtualBox: **File → Tools → Network Manager → NAT Networks → Create**.
 2. Keep the default name and make sure it is enabled.
 
-![](evidence/03-network-adapter.png)
+[screenshots](evidence/03-network-adapter)
 
 Why **NAT Network** and not the alternatives:
 
@@ -70,8 +70,6 @@ Why **NAT Network** and not the alternatives:
 - *NAT Network* gives both guests one shared network **and** internet access through the host.
 
 > Check: the new network appears in the NAT Networks list with the box ticked.
-> Check: run `ip addr` inside the guest. You should see an address like
-> 192.168.x.x, different from the host’s
 ---
 
 ## Step 5. Create the Ubuntu VM
@@ -81,7 +79,6 @@ Why **NAT Network** and not the alternatives:
 3. Base Memory: `your number`. Processors: `2`.
 4. Hard disk: **Create a virtual hard disk now**, `25 GB`, leave *Pre-allocate Full Size* **unticked**.
 5. Finish. Open **Settings → Network**: Adapter 1 → *Attached to:* **NAT Network** → choose the network from Step 4.
-6. Before starting the VM, screenshot the Settings window showing CPU, memory and disk.
 
 ![](evidence/01-new-vm-wizard.png)
 ![](evidence/02-disk-settings.png)
