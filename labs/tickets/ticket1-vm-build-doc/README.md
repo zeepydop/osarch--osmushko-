@@ -12,6 +12,19 @@ myself? Thanks
 
 ## 2. What was actually needed
 
+**What the request left out but the job requires**
+
+- Which operating systems? "A test computer" does not say Linux or Windows. I assumed the developer needs one of each, so the environment has an Ubuntu Server VM and a Windows 11 VM. 
+- Where it runs and with what resources? The request gives no hardware. The VMs share one host, so the numbers had to come from the host itself: <host: N cores, N GB RAM, N GB free disk>. Allocation: Ubuntu 2 vCPU, 2 GB RAM / 25 GB disk; Windows >4 GB RAM / 64 GB disk, 4-6 vCPU. 
+- Network. The two machines must see each other and the internet. That has to be designed (a shared NAT Network), not left to defaults.
+- Licensing. The Windows used is the Microsoft evaluation edition. It is legal and free, but it expires after 90 days. Whoever builds the next one needs to know this, and no personal Windows key should ever go into a test machine.
+- A way back. "Without breaking anything" is not a property of a VM by itself. It exists only because a snapshot was taken before anything was changed.
+
+**Where the request is wrong**
+
+- "A test computer" suggests a separate physical machine. A virtual machine on an existing laptop does the same job at no extra cost and can be reset in seconds.
+- "Nothing special" is not quite true: virtualization must be enabled in UEFI, there must be 40+ GB of free disk, and the Windows VM needs UEFI, Secure Boot and TPM 2.0.
+- "So I can do the next one myself": the reader of the document is a non-technical office manager, so BUILD.md is written for someone who has never opened a hypervisor, with a screenshot and a reason at every step.
 
 **What I would have asked, and what I assumed instead**
 
@@ -29,8 +42,8 @@ Full step-by-step instructions with screenshots are in [BUILD.md](BUILD.md). Sum
 1. Recorded the host's numbers and confirmed hardware virtualization is on.
 2. Installed VirtualBox and downloaded both ISOs Ubuntu Server LTS ; Windows 11 Enterprise evaluation.
 3. Created one **NAT Network** so both VMs share a network and have internet.
-4. Built the Ubuntu Server VM (2 vCPU, 2 GB RAM, 25 GB dynamic disk)
-5. Built the Windows 11 VM (4 vCPU, 5 GB RAM, 64 GB dynamic disk, EFI + Secure Boot + TPM 2.0), installed it with a local account, then installed Guest Additions.
+4. Built the Ubuntu Server VM (2 vCPU, <2 GB RAM, 25 GB dynamic disk)
+5. Built the Windows 11 VM (4 vCPU, 4 GB RAM, 65 GB dynamic disk, EFI + Secure Boot + TPM 2.0), installed it with a local account, then installed Guest Additions.
 6. Recorded both IP addresses, tested ping in both directions, and tested internet from each guest.
 
 **Settings that differ from the defaults, and why**
@@ -39,8 +52,8 @@ Full step-by-step instructions with screenshots are in [BUILD.md](BUILD.md). Sum
 |---|---|---|
 | Skip Unattended Installation | ticked | VirtualBox would hide the real installer and choose for me |
 | Network (both VMs) | NAT Network | Plain NAT gives each VM its own router (they cannot see each other); bridged is often blocked on campus Wi-Fi; host-only has no internet |
-| Memory (Ubuntu) | <2 GB | I do not have enough space |
-| Memory (Windows) | ~5120 MB | Windows 11's minimum is 4096MB, it's better to giveit a bit more |
+| Memory (Ubuntu) | <2 GB | I do not have enough space on my laptop, therefore couldn't show it correctly, but i did note this dilemma in BUILD.md |
+| Memory (Windows) | ~5120 MB | Windows 11's minimum is 4096MB, but I adviced to give a bit more since the program might not boot up|
 | Disk | 25 GB / 64 GB, dynamic | Minimums for each OS; files start small and grow |
 | Windows account | local account | No personal Microsoft account on a test machine |
 | Windows privacy options | all off | Test machine, no telemetry needed |
@@ -49,6 +62,7 @@ Full step-by-step instructions with screenshots are in [BUILD.md](BUILD.md). Sum
 **One thing that went wrong, and how I resolved it**
 
 My laptop didn't fit the criteria so I took evidence supporting the Windows setup from partnering up with Inzhu, Group 6
+
 
 ## 4. Evidence
 
