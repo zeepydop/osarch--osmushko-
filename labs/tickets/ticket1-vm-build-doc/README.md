@@ -78,4 +78,5 @@ My laptop didn't fit the criteria so I took evidence supporting the Windows setu
 ## 5. What I would do differently
 
 - I would ask Aigerim the needed questions in section 2 before starting instead of assuming.
-- I would write down the Windows evaluation expiry date in the document, since the next person will otherwise be surprised after 90 days. 
+- I would write down the Windows evaluation expiry date in the document, since the next person will otherwise be surprised after 90 days.
+- I would advice Aigerim not to trust someone like me
