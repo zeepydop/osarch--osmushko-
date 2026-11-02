@@ -61,22 +61,22 @@ Full step-by-step instructions with screenshots are in [BUILD.md](BUILD.md). Sum
 
 **One thing that went wrong, and how I resolved it**
 
-My laptop didn't fit the criteria so I took evidence supporting the Windows setup from partnering up with Inzhu, Group 6
-
+- My laptop didn't fit the criteria so I took evidence supporting the Windows setup from partnering up with Inzhu, Group 6
+- During setting up, we assumed that the Windows additions hadn't been installed properly and were stuck without ctrl+c/v, but after a while we discovered that there was a setting to turn it on both ways(from host to vm and back) and as we did it finally worked 
 
 ## 4. Evidence
 
 | File | What it proves |
 |---|---|
 | [evidence/01-new-vm-wizard](evidence/01-new-vm-wizard) | The VM was created with the intended name, OS type and resources |
-| [evidence/02-disk-settings.png](evidence/02-disk-settings.png) | The virtual disk size and that it is dynamically allocated |
-| [evidence/03-network-adapter.png](evidence/03-network-adapter.png) | network |
+| [evidence/02-disk-settings](evidence/02-disk-settings) | The virtual disk size and that it is dynamically allocated |
+| [evidence/03-network-adapter](evidence/03-network-adapter) | network |
 | [evidence/04-guest-uname.txt](evidence/04-guest-uname.txt) | guestuname |
 | [evidence/05-ping-between-guests.txt](evidence/05-ping-between-guests.txt) | The guests reach each other and the internet |
-| [evidence/06-snapshot-list.png](evidence/06-snapshot-list.png) |  snapshots |
+| [evidence/06-snapshot-list](evidence/06-snapshot-list) |  snapshots |
 
 ## 5. What I would do differently
 
 - I would ask Aigerim the needed questions in section 2 before starting instead of assuming.
 - I would write down the Windows evaluation expiry date in the document, since the next person will otherwise be surprised after 90 days.
-- I would advice Aigerim not to trust someone like me
+- I would advice Aigerim not to trust someone like me, since I'm a newbie :P
