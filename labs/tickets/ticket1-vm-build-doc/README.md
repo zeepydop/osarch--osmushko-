@@ -15,7 +15,7 @@ myself? Thanks
 **What the request left out but the job requires**
 
 - Which operating systems? "A test computer" does not say Linux or Windows. I assumed the developer needs one of each, so the environment has an Ubuntu Server VM and a Windows 11 VM. 
-- Where it runs and with what resources? The request gives no hardware. The VMs share one host, so the numbers had to come from the host itself: <host: N cores, N GB RAM, N GB free disk>. Allocation: Ubuntu 2 vCPU, 2 GB RAM / 25 GB disk; Windows >4 GB RAM / 64 GB disk, 4-6 vCPU. 
+- Where it runs and with what resources? The request gives no hardware. The VMs share one host, so the numbers had to come from the host itself: N cores, N GB RAM, N GB free disk. Allocation: Ubuntu 2 vCPU, 2 GB RAM / 25 GB disk; Windows >4 GB RAM / 64 GB disk, 4-6 vCPU. 
 - Network. The two machines must see each other and the internet. That has to be designed (a shared NAT Network), not left to defaults.
 - Licensing. The Windows used is the Microsoft evaluation edition. It is legal and free, but it expires after 90 days. Whoever builds the next one needs to know this, and no personal Windows key should ever go into a test machine.
 - A way back. "Without breaking anything" is not a property of a VM by itself. It exists only because a snapshot was taken before anything was changed.
