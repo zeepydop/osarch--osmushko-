@@ -68,7 +68,7 @@ My laptop didn't fit the criteria so I took evidence supporting the Windows setu
 
 | File | What it proves |
 |---|---|
-| [evidence/01-new-vm-wizard.png](evidence/01-new-vm-wizard.png) | The VM was created with the intended name, OS type and resources |
+| [evidence/01-new-vm-wizard](evidence/01-new-vm-wizard) | The VM was created with the intended name, OS type and resources |
 | [evidence/02-disk-settings.png](evidence/02-disk-settings.png) | The virtual disk size and that it is dynamically allocated |
 | [evidence/03-network-adapter.png](evidence/03-network-adapter.png) | network |
 | [evidence/04-guest-uname.txt](evidence/04-guest-uname.txt) | guestuname |
