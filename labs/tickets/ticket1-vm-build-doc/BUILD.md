@@ -2,7 +2,6 @@
 
 This document rebuilds a two-machine test environment from nothing. You do not need to have used a hypervisor before. Follow the steps in order; each step has a screenshot, a reason for the choice, and a check so you know it worked.
 
-
 ## Step 0. Before you start
 
 Check these on the computer that will host the VMs ("the host"):
@@ -20,7 +19,7 @@ Check these on the computer that will host the VMs ("the host"):
 
 ## Step 1. Install VirtualBox
 
-1. Download VirtualBox from virtualbox.org and install with the defaults.
+1. Download VirtualBox from [virtualbox.org](https://www.virtualbox.org/wiki/Downloads) and install with the defaults.
 2. Start it once to confirm it opens.
 > Why VirtualBox?: it is free and runs on Windows, Linux and Intel Macs. The Extension Pack is **not** needed here; it has its own licence, so skip it.
 > Check: the VirtualBox Manager window opens with an empty machine list.
@@ -31,8 +30,8 @@ Check these on the computer that will host the VMs ("the host"):
 
 Keep both in a normal folder such as `Downloads`
 
-1. **Ubuntu Server** (not Desktop): ubuntu.com/download/server, the current **LTS** release, **amd64**. Version used: `<24.04.x>`.
-2. **Windows 11 Enterprise evaluation**: Microsoft Evaluation Center → Windows 11 Enterprise → ISO, 64-bit, English (United States).
+1. **Ubuntu Server** (not Desktop): [ubuntu.com](https://ubuntu.com/download/server), the current **LTS** release, **amd64**. Version used: `<24.04.x>`. If you have Mac with Apple Silicon (M1, M2, M3, M4 …) you have ARM64, means you need another version [ubuntu.com](https://ubuntu.com/download/server/arm)
+2. **Windows 11 Enterprise evaluation**: [Microsoft Evaluation Center](https://www.microsoft.com/en-us/evalcenter/download-windows-11-enterprise) → Windows 11 Enterprise → ISO, 64-bit, English (United States).
 
 >Why Server and not Desktop: the server image has no graphical desktop, so it uses far less RAM and disk. 
 Why the evaluation ISO: it is free and legal for 90 days with no product key. Never enter a personal Windows key into a test VM and never download a "pre-activated" Windows.
@@ -43,16 +42,17 @@ Why the evaluation ISO: it is free and legal for 90 days with no product key. Ne
 ---
 
 ## Step 3. Decide the resources (and write down why)
-
+![](evidence/01-new-vm-wizard)
 | Resource | Ubuntu Server | Windows 11 | Why |
 |---|---|---|---|
 | vCPU | 2 | 4 | Enough for both; never more than half of the host's `N` cores |
-| Memory | 2 GB | 4 GB (4096 MB) | Windows 11's minimum is 4 GB; Ubuntu Server needs little |
+| Memory | 2 GB | >4 GB (4096 MB) | Windows 11's minimum is 4 GB, for it to boot up smoother it's best to give it a bit more; Ubuntu Server needs little |
 | Disk | 25 GB, dynamically allocated | 64 GB, dynamically allocated | Windows 11's minimum is 64 GB; the file starts small and grows as needed |
 | Network | NAT Network | NAT Network | See Step 4 |
 
-**Calculation for this host:** `<example: host has 16 GB RAM. Windows alone idles at about 6 GB, so I leave the host at least 6 GB. The two guests take 4 + 4 = 8 GB, which leaves the host 8 GB.>`  Disk: `<25 + 64 = 89 GB maximum out of X GB free; both disks are dynamic, so the real usage starts at a few GB>`.
+**Calculation for this host:** host has 16 GB RAM. Windows alone idles at about 6 GB, so I leave the host at least 6 GB. The two guests take 4 + 4 = 8 GB, which leaves the host 8 GB.  Disk: 25 + 64 = 89 GB maximum out of X GB free; both disks are dynamic, so the real usage starts at a few GB.
 
+>On the following guiding screenshots you can see that during the setting the v.machine Windows, I give it everything I have(red line) which is not okay and the VM will likely freeze my laptop if I try to boot it. I still attached those as an example on how the settings look and where to put which. If you have the same problem, it's best to change your computer rather than trying to push through it, since windows will not accept any RAM less than 4096MB(4GB).
 ---
 
 ## Step 4. Create a shared network (do this before creating the VMs)
