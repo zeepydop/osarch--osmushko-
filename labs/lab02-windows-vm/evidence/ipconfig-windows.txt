@@ -1,1 +1,13 @@
+PS C:\Users\Inzhu Diana> ipconfig
 
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::bd8b:3792:9dc3:5793%6
+   IPv4 Address. . . . . . . . . . . : 10.0.2.3
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 10.0.2.1
+PS C:\Users\Inzhu Diana> ipconfig | Set-Clipboard
