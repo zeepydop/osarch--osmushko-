@@ -9,8 +9,10 @@ Date: 20.10.26 - 25.10.26(26.10.26)
 
 1. Installed Oracle VirtualBox- 7.2.20-175154-Win.
 2. Created VM lab01-ubuntu: 1 vCPU, 1513 MB RAM, 25 GB dynamic disk, NAT.
-3. Installed Ubuntu Server, took snapshot clean-install.
-4. Broke it:
+**Why 1 vCPU and 1.5 GB RAM were chosen:**
+My laptop has a 4-thread CPU and 4 GB of total RAM. Allocating 1 vCPU (1 thread) and 1.5 GB of RAM to the Ubuntu Server guest VM is an optimal balance. It leaves 3 CPU threads and 2.5 GB of RAM for the host Windows OS, ensuring that the host remains stable and doesn't freeze or crash during the lab.
+4. Installed Ubuntu Server, took snapshot clean-install.
+5. Broke it:
 ```
 sudo sed -i 's/dhcp4: true/dhcp4: false/' /etc/netplan/*.yaml
 sudo netplan apply
