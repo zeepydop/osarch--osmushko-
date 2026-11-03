@@ -31,7 +31,7 @@ Date: 01.11.2026-03.11.2026
 | What I noticed | — | It almost crashed when we tried to operate in the VMs, was freezing badly|
 
 ## What did not work the first time
-1. We couldn't check if the Windows additions installed properly
+1. During setting up, we assumed that the Windows additions hadn't been installed properly and were stuck without ctrl+c/v, but after a while we discovered that there was a setting to turn it on both ways(from host to vm and back) and as we did it finally worked
 2. Our VMs couldn't see each other even with the NewRule command, always `Destination Host Unreachable`
 3. During the overcommitment experiment, it lagged a lot and almost froze the laptop
 
