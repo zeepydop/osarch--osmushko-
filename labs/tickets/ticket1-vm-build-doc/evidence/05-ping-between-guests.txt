@@ -13,6 +13,7 @@ Approximate round trip times in milli-seconds:
 
 Ubuntu to Windows 
 (without newrule)
+<username>@ubuntu-test:~$ ping -c 4 10.0.2.15
 PING 10.0.2.15 (10.0.2.15) 56(84) bytes of data.
 From 10.0.2.3 icmp_seq=1 Destination Host Unreachable
 From 10.0.2.3 icmp_seq=2 Destination Host Unreachable
@@ -23,7 +24,7 @@ From 10.0.2.3 icmp_seq=4 Destination Host Unreachable
 4 packets transmitted, 0 received, +4 errors, 100% packet loss, time 3054ms
 
 (with New-NetFirewallRule -DisplayName "Allow ping in (ICMPv4)" -Protocol ICMPv4 -IcmpType 8 -Direction Inbound -Action Allow)
-
+<username>@ubuntu-test:~$ ping -c 4 10.0.2.15
 PING 10.0.2.15 (10.0.2.15) 56(84) bytes of data.
 64 bytes from 10.0.2.15: icmp_seq=1 ttl=128 time=0.452 ms
 64 bytes from 10.0.2.15: icmp_seq=2 ttl=128 time=0.381 ms
