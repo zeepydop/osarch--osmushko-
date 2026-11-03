@@ -206,7 +206,7 @@ Note the IPv4 address (`10.0.2.15`).
 ip -br a
 ```
 
-Note the address on the network card, not `lo` (`10.0.2.3`). Save from the host:
+Note the address on the network card, not `lo` (`10.0.2.3`). Save from the host:[next text](evidence/04-guest-uname)
 
 > Why both are in the same subnet: that is what a NAT Network guarantees; guests on one network can reach each other directly.
 
