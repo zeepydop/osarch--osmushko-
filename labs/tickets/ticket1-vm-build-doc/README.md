@@ -70,10 +70,10 @@ Full step-by-step instructions with screenshots are in [BUILD.md](BUILD.md). Sum
 |---|---|
 | [evidence/01-new-vm-wizard](evidence/01-new-vm-wizard) | The VM was created with the intended name, OS type and resources |
 | [evidence/02-disk-settings](evidence/02-disk-settings) | The virtual disk size and that it is dynamically allocated |
-| [evidence/03-network-adapter](evidence/03-network-adapter) | network |
+| [evidence/03-network-adapter](evidence/03-network-adapter) | NATNetwork network, where to connect |
 | [evidence/04-guest-uname.txt](evidence/04-guest-uname.txt) | guestuname |
 | [evidence/05-ping-between-guests.txt](evidence/05-ping-between-guests.txt) | The guests reach each other and the internet |
-| [evidence/06-snapshot-list](evidence/06-snapshot-list) |  snapshots |
+| [evidence/06-snapshot-list](evidence/06-snapshot-list) |  A way back for the worker |
 
 ## 5. What I would do differently
 
