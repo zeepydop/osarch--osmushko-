@@ -1,1 +1,9 @@
 
+
+ip -br a
+uname -a
+
+
+
+
+ssh -p 2222 <username>@<ip address> "uname -a" > uname-result.txt
