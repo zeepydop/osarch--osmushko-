@@ -60,7 +60,7 @@ Why the evaluation ISO: it is free and legal for 90 days with no product key. Ne
 1. VirtualBox: **File → Tools → Network Manager → NAT Networks → Create**.
 2. Keep the default name and make sure it is enabled.
 
-[screenshots network](evidence/03-network-adapter)
+![](evidence/03-network-adapter/create-nat-network.png)
 
 Why **NAT Network** and not the alternatives:
 
@@ -76,12 +76,12 @@ Why **NAT Network** and not the alternatives:
 
 1. **Machine → New**. Name: `ubuntu-test`. ISO Image: the Ubuntu Server ISO. Type: *Linux*, Version: *Ubuntu (64-bit)*.
 2. Tick **Skip Unattended Installation**.
+![](evidence/01-new-vm-wizard/ubuntu-create.png)
 3. Base Memory: `your number`. Processors: `2`.
+![](evidence/02-disk-settings/ubuntu-ram-cpu.png)
 4. Hard disk: **Create a virtual hard disk now**, `25 GB`, leave *Pre-allocate Full Size* **unticked**.
+![](evidence/02-disk-settings/ubuntu-disk-size.png)
 5. Finish. Open **Settings → Network**: Adapter 1 → *Attached to:* **NAT Network** → choose the network from Step 4.
-
-[screenshots vm](evidence/01-new-vm-wizard)
-[screenshots disk](evidence/02-disk-settings)
 
 > Why skip unattended installation: VirtualBox would otherwise install Ubuntu for you with its own choices, and you would never see the real installer. 
 > Why not pre-allocate: the disk file stays small and grows only as data is written.
@@ -125,7 +125,7 @@ uname -a
 Expected: the Ubuntu version, your server name, 2 CPUs, your memory, about 25 GB disk, and an IP address on the network card.
 
 To save the output on the host, add a port-forwarding rule (VirtualBox cannot reach a NAT Network guest directly): **File → Tools → Network Manager → NAT Networks → your network → Port Forwarding**, add: Host Port `2222`, Guest IP = Ubuntu's address(10.0.2.3), Guest Port `22`. 
-[next text](evidence/04-guest-uname)
+[commands to note](evidence/04-guest-uname.txt)
 
 ---
 
@@ -134,7 +134,7 @@ To save the output on the host, add a port-forwarding rule (VirtualBox cannot re
 1. VM selected → **Snapshots** tab → **Take**. Name: `clean-install`.
 2. Screenshot the snapshot list.
 
-[screenshot](evidence/06-snapshot-list)
+![](evidence/06-snapshot-list/clean-install.png)
 
 > Why now: a snapshot is a rollback point. Take it **before** anything is broken; anything done afterwards can be undone by restoring it.
 
@@ -146,12 +146,13 @@ To save the output on the host, add a port-forwarding rule (VirtualBox cannot re
 
 1. **Machine → New**. Name: `windows-test`. ISO Image: the Windows ISO. Type: *Microsoft Windows*, Version: *Windows 11 (64-bit)*.
 2. Tick **Skip Unattended Installation**.
+![](evidence/01-new-vm-wizard/windows-create.png)
 3. Base Memory `5120` MB, Processors `4`.
+![](evidence/02-disk-settings/windows-ram-cpu.png)
 4. Hard disk: **Create a virtual hard disk now**, `64 GB`, *Pre-allocate Full Size* unticked.
+![](evidence/02-disk-settings/windows-disk-size.png)
 5. Finish. **Settings → System**: *Enable EFI* ticked, *TPM Version* v2.0, *Enable Secure Boot* ticked.
 6. **Settings → Network**: Adapter 1 → **NAT Network**, the same network as Ubuntu.
-[screenshots vm](evidence/01-new-vm-wizard)
-[screenshots disk](evidence/02-disk-settings)
 
 > Why these settings differ from the Linux VM: Windows 11 refuses to install without UEFI, Secure Boot and a TPM 2.0. Choosing "Windows 11" as the version makes VirtualBox switch these on for you; the check above confirms it.
 
@@ -177,7 +178,7 @@ To save the output on the host, add a port-forwarding rule (VirtualBox cannot re
 ---
 
 ## Step 11. Install Guest Additions
-
+![](evidence/guest-additions-windows.png)
 1. In the VM window: **Devices → Insert Guest Additions CD image**.
 2. In Windows: File Explorer → the DVD drive → run `VBoxWindowsAdditions.exe` → defaults → restart.
 
@@ -198,7 +199,7 @@ ipconfig
 ipconfig | Set-Clipboard
 ```
 
-Note the IPv4 address (`10.0.2.15`).
+Note the IPv4 address (`10.0.2.15`). `ipconfig | Set-Clipboard` sets the result to your clipboard.
 
 **Ubuntu**:
 
@@ -206,7 +207,7 @@ Note the IPv4 address (`10.0.2.15`).
 ip -br a
 ```
 
-Note the address on the network card, not `lo` (`10.0.2.3`). Save from the host:[next text](evidence/04-guest-uname)
+Note the address on the network card, not `lo` (`10.0.2.3`). Save from the host:[next text](evidence/04-guest-uname.txt)
 
 > Why both are in the same subnet: that is what a NAT Network guarantees; guests on one network can reach each other directly.
 
@@ -215,7 +216,7 @@ Note the address on the network card, not `lo` (`10.0.2.3`). Save from the host:
 ---
 
 ## Step 13. Ping both ways, and fix the firewall properly
-[how it should look](05-ping-between-guests.txt)
+![how it should look](05-ping-between-guests.txt)
 
 **Windows → Ubuntu.** PowerShell: `ping 10.0.2.3`. Replies come back, because Ubuntu's firewall is off by default.
 
@@ -243,9 +244,40 @@ Ping from Ubuntu again; replies now come back. Check the rule: `Get-NetFirewallR
 - Windows: `ping ubuntu.com`
 
 > Check: both machines get replies from ubuntu.com.
-[how it should look](ping-to-internet1.png)
-[how it should look](ping-to-internet2.png)
+![](ping-to-internet1.png)
+![](ping-to-internet2.png)
 ---
+
+## How to fix things if they break (Rollback via Snapshots)
+
+If you "broke the system" or the test machine stops working, you do not need to rebuild it from scratch. We made a backup snapshot (clean-install) for exactly this reason. 
+
+1. Open VirtualBox, click on the broken VM (Ubuntu or Windows) from the left list, and make sure it is completely turned off (Power Off).
+2. Click the small menu button next to the VM name and select **Snapshots**.
+3. You will see our saved snapshot (e.g., "clean-install"). Click on it, then click the **Restore** button at the top.
+> Uncheck "Create a snapshot of the current machine state" (we do not want to save the broken version) and hit **Restore**.
+
+The machine is now brand new again. It takes less than 10 seconds.
+
+## What to do if things go wrong
+
+If you are setting up the next computer and hit a wall, here are the two most common problems and exactly how to solve them:
+
+### Problem 1: VirtualBox says "VT-x/AMD-V Hardware virtualization is not available" or won't boot Windows
+* **Why it happens?** The physical computer has a security wall built into its main motherboard settings (UEFI/BIOS) that stops it from running virtual computers.
+* **The Fix:** 
+  1. Restart the real laptop. 
+  2. As it turns on, spam the setup key (usually **F2**, **F10**, or **Del** depending on the laptop brand) to enter the BIOS menu.
+  3. Use the arrow keys to find a tab called **Advanced**, **Security**, or **CPU Configuration**.
+  4. Look for a setting named **Intel Virtualization Technology**, **VT-x**, or **SVM Mode** and change it from *Disabled* to **Enabled**.
+  5. Press **F10** to save changes and restart the laptop.
+
+### Problem 2: The VM has no internet access
+* **Why it happens?** The VM is looking for our custom network, but VirtualBox forgot where it is, or your physical Wi-Fi blocked it.
+* **The Fix:**
+  1. In VirtualBox, go to **File** → **Tools** → **Network Manager**. Check if our **NAT Network** is listed there and has a checkmark next to "Enable".
+  2. Go to the settings of the broken VM, click **Network**, and double-check that Adapter 1 is set to Attached to: **NAT Network** and the Name matches our network exactly.
+  3. If it still fails, change "Attached to" to plain **NAT** as a temporary backup. This gives the VM instant internet, though the two machines won't be able to talk to each other until you fix the NAT Network.
 
 ## Done: final checklist
 
