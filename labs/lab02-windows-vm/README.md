@@ -20,7 +20,7 @@ Date: 01.11.2026-03.11.2026
           [VM NAT  10.0.2.0/24]
           /                    \
       lab01-ubuntu               lab02-windows
-      10.0.2.3                       10.0.2.3
+      10.0.2.4                       10.0.2.3
 
 ## Result
 | | Before | After |
