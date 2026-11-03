@@ -178,7 +178,7 @@ To save the output on the host, add a port-forwarding rule (VirtualBox cannot re
 ---
 
 ## Step 11. Install Guest Additions
-![](evidence/guest-additions-windows.png)
+![](evidence/guest-addititions-windows.png)
 1. In the VM window: **Devices → Insert Guest Additions CD image**.
 2. In Windows: File Explorer → the DVD drive → run `VBoxWindowsAdditions.exe` → defaults → restart.
 
@@ -207,7 +207,7 @@ Note the IPv4 address (`10.0.2.15`). `ipconfig | Set-Clipboard` sets the result 
 ip -br a
 ```
 
-Note the address on the network card, not `lo` (`10.0.2.3`). Save from the host:[next text](evidence/04-guest-uname.txt)
+Note the address on the network card, not `lo` (`10.0.2.3`). Save from the host:[save](evidence/04-guest-uname.txt)
 
 > Why both are in the same subnet: that is what a NAT Network guarantees; guests on one network can reach each other directly.
 
@@ -216,7 +216,7 @@ Note the address on the network card, not `lo` (`10.0.2.3`). Save from the host:
 ---
 
 ## Step 13. Ping both ways, and fix the firewall properly
-![how it should look](05-ping-between-guests.txt)
+[how it should look](05-ping-between-guests.txt)
 
 **Windows → Ubuntu.** PowerShell: `ping 10.0.2.3`. Replies come back, because Ubuntu's firewall is off by default.
 
