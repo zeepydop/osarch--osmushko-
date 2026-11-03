@@ -42,11 +42,11 @@ Why the evaluation ISO: it is free and legal for 90 days with no product key. Ne
 ---
 
 ## Step 3. Decide the resources (and write down why)
-[screenshots](evidence/01-new-vm-wizard)
+
 | Resource | Ubuntu Server | Windows 11 | Why |
 |---|---|---|---|
 | vCPU | 2 | 4 | Enough for both; never more than half of the host's `N` cores |
-| Memory | 2 GB | >4 GB (4096 MB) | Windows 11's minimum is 4 GB, for it to boot up smoother it's best to give it a bit more; Ubuntu Server needs little |
+| Memory | <2 GB | >4 GB (4096 MB) | Windows 11's minimum is 4 GB, for it to boot up smoother it's best to give it a bit more; Ubuntu Server needs little |
 | Disk | 25 GB, dynamically allocated | 64 GB, dynamically allocated | Windows 11's minimum is 64 GB; the file starts small and grows as needed |
 | Network | NAT Network | NAT Network | See Step 4 |
 
@@ -60,7 +60,7 @@ Why the evaluation ISO: it is free and legal for 90 days with no product key. Ne
 1. VirtualBox: **File → Tools → Network Manager → NAT Networks → Create**.
 2. Keep the default name and make sure it is enabled.
 
-[screenshots](evidence/03-network-adapter)
+[screenshots network](evidence/03-network-adapter)
 
 Why **NAT Network** and not the alternatives:
 
@@ -80,8 +80,8 @@ Why **NAT Network** and not the alternatives:
 4. Hard disk: **Create a virtual hard disk now**, `25 GB`, leave *Pre-allocate Full Size* **unticked**.
 5. Finish. Open **Settings → Network**: Adapter 1 → *Attached to:* **NAT Network** → choose the network from Step 4.
 
-![](evidence/01-new-vm-wizard.png)
-![](evidence/02-disk-settings.png)
+[screenshots vm](evidence/01-new-vm-wizard)
+[screenshots disk](evidence/02-disk-settings)
 
 > Why skip unattended installation: VirtualBox would otherwise install Ubuntu for you with its own choices, and you would never see the real installer. 
 > Why not pre-allocate: the disk file stays small and grows only as data is written.
@@ -134,7 +134,7 @@ To save the output on the host, add a port-forwarding rule (VirtualBox cannot re
 1. VM selected → **Snapshots** tab → **Take**. Name: `clean-install`.
 2. Screenshot the snapshot list.
 
-![](evidence/06-snapshot-list.png)
+[screenshot](evidence/06-snapshot-list)
 
 > Why now: a snapshot is a rollback point. Take it **before** anything is broken; anything done afterwards can be undone by restoring it.
 
@@ -150,7 +150,8 @@ To save the output on the host, add a port-forwarding rule (VirtualBox cannot re
 4. Hard disk: **Create a virtual hard disk now**, `64 GB`, *Pre-allocate Full Size* unticked.
 5. Finish. **Settings → System**: *Enable EFI* ticked, *TPM Version* v2.0, *Enable Secure Boot* ticked.
 6. **Settings → Network**: Adapter 1 → **NAT Network**, the same network as Ubuntu.
-
+[screenshots vm](evidence/01-new-vm-wizard)
+[screenshots disk](evidence/02-disk-settings)
 
 > Why these settings differ from the Linux VM: Windows 11 refuses to install without UEFI, Secure Boot and a TPM 2.0. Choosing "Windows 11" as the version makes VirtualBox switch these on for you; the check above confirms it.
 
@@ -214,6 +215,7 @@ Note the address on the network card, not `lo` (`10.0.2.3`). Save from the host:
 ---
 
 ## Step 13. Ping both ways, and fix the firewall properly
+[how it should look](05-ping-between-guests.txt)
 
 **Windows → Ubuntu.** PowerShell: `ping 10.0.2.3`. Replies come back, because Ubuntu's firewall is off by default.
 
