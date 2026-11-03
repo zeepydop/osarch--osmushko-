@@ -7,7 +7,7 @@ Date: 01.11.2026-03.11.2026
 ## What I did
 1. Downloaded Windows 11 Enterprise evaluation. Licence: [Evaluation Center link](https://www.microsoft.com/en-us/evalcenter/download-windows-11-enterprise)
 2. Created lab02-windows: 4 vCPU, ~5120 MB, 64 GB thin, UEFI + Secure Boot, vTPM.
-3. Network mode: NAT, NATNetwork, both guests. Why: I used NAT Network because both guests must see each other and the internet, and bridged mode is blocked on campus Wi-Fi.
+3. Network mode: NAT, NATNetwork, both guests. Why: Plain NAT gives each VM its own router (they cannot see each other); bridged is often blocked on campus Wi-Fi; host-only has no internet, and NAT Network provides both connection and internet
 4. Ping Ubuntu → Windows timed out because <why>. Fixed with: `New-NetFirewallRule -DisplayName "Allow ping in (ICMPv4)" -Protocol ICMPv4 -IcmpType 8 -Direction Inbound -Action Allow`
 5. Overcommitment: set ~11 GB + ~11 GB on a 16 GB host.
 
