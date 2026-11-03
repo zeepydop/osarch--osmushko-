@@ -82,7 +82,7 @@ Why **NAT Network** and not the alternatives:
 4. Hard disk: **Create a virtual hard disk now**, `25 GB`, leave *Pre-allocate Full Size* **unticked**.
 ![](evidence/02-disk-settings/ubuntu-disk-size.png)
 5. Finish. Open **Settings → Network**: Adapter 1 → *Attached to:* **NAT Network** → choose the network from Step 4.
-
+![](evidence/03-network-adapter/connect-adapter1.png)
 > Why skip unattended installation: VirtualBox would otherwise install Ubuntu for you with its own choices, and you would never see the real installer. 
 > Why not pre-allocate: the disk file stays small and grows only as data is written.
 > Check: the machine `ubuntu-test` is in the list; Settings show 1900(<2GB) MB RAM, 2 CPUs, 25 GB disk.
@@ -153,7 +153,7 @@ To save the output on the host, add a port-forwarding rule (VirtualBox cannot re
 ![](evidence/02-disk-settings/windows-disk-size.png)
 5. Finish. **Settings → System**: *Enable EFI* ticked, *TPM Version* v2.0, *Enable Secure Boot* ticked.
 6. **Settings → Network**: Adapter 1 → **NAT Network**, the same network as Ubuntu.
-
+![](evidence/03-network-adapter/connect-adapter1.png)
 > Why these settings differ from the Linux VM: Windows 11 refuses to install without UEFI, Secure Boot and a TPM 2.0. Choosing "Windows 11" as the version makes VirtualBox switch these on for you; the check above confirms it.
 
 > Check: Settings → System shows EFI, TPM v2.0 and Secure Boot all enabled.
