@@ -2,7 +2,7 @@ vboxuser@lab01ubuntu01ubuntu:~$ ip -br a
 
 lo      UNKNOWN    127.0.0.1/8 /128
 
-enp0s3    UP       10.0.2.3/24 metric 100 fd17:625c1f037:2:800:27ff:feia:d276/64 fe80::00:27ffafela:d276/64
+enp0s3    UP       10.0.2.4/24 metric 100 fd17:625c1f037:2:800:27ff:feia:d276/64 fe80::00:27ffafela:d276/64
 vboxuser@lab01ubuntu01ubuntu:~$
 
 
