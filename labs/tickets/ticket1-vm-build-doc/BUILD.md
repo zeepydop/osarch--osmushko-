@@ -243,7 +243,8 @@ Ping from Ubuntu again; replies now come back. Check the rule: `Get-NetFirewallR
 - Windows: `ping ubuntu.com`
 
 > Check: both machines get replies from ubuntu.com.
-
+[how it should look](ping-to-internet1.png)
+[how it should look](ping-to-internet2.png)
 ---
 
 ## Done: final checklist
