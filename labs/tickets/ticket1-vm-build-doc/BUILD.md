@@ -52,7 +52,7 @@ Why the evaluation ISO: it is free and legal for 90 days with no product key. Ne
 
 **Calculation for this host:** host has 16 GB RAM. Windows alone idles at about 6 GB, so I leave the host at least 6 GB. The two guests take 4 + 4 = 8 GB, which leaves the host 8 GB.  Disk: 25 + 64 = 89 GB maximum out of X GB free; both disks are dynamic, so the real usage starts at a few GB.
 
->On the following guiding screenshots you can see that during the setting the v.machine Windows, I give it everything I have(red line) which is not okay and the VM will likely freeze my laptop if I try to boot it. I still attached those as an example on how the settings look and where to put which. If you have the same problem, it's best to change your computer rather than trying to push through it, since windows will not accept any RAM less than 4096MB(4GB).
+>On the next following guiding screenshots you can see that during the setting the v.machine Windows, I give it everything I have(red line) which is not okay and the VM will likely freeze my laptop if I try to boot it. I still attached those as an example on how the settings look and where to put which. If you have the same problem, it's best to change your computer rather than trying to push through it, since windows will not accept any RAM less than 4096MB(4GB).
 ---
 
 ## Step 4. Create a shared network (do this before creating the VMs)
