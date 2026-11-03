@@ -61,8 +61,9 @@ Full step-by-step instructions with screenshots are in [BUILD.md](BUILD.md). Sum
 
 **One thing that went wrong, and how I resolved it**
 
-- My laptop didn't fit the criteria so I took evidence supporting the Windows setup from partnering up with Inzhu, Group 6
-- During setting up, we assumed that the Windows additions hadn't been installed properly and were stuck without ctrl+c/v, but after a while we discovered that there was a setting to turn it on both ways(from host to vm and back) and as we did it finally worked 
+- My laptop didn't fit the criteria so I took some of the evidence supporting the Windows setup from partnering up with Inzhu, Group 6
+- During setting up, we assumed that the Windows additions hadn't been installed properly and were stuck without ctrl+c/v, but after a while we discovered that there was a setting to turn it on both ways(from host to vm and back) and as we did it finally worked
+- I fixed the layout of my BUILD.md as noted in the received feedback, removed placeholders 'test', input raw code, seperated the screenshots by topic and renamed them, put supposed output in guest-uname.txt, added rollback explanation and line of actions in case of some troubleshooting. I explained my RAM reasoning both here and in person.
 
 ## 4. Evidence
 
