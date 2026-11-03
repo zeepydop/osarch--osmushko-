@@ -13,6 +13,14 @@ Date: <dd.mm.2026>
 
 ## Network diagram
 <diagram or image>
+              Internet
+                 |
+      Host laptop 10.20.5.37 (home Wi-Fi)
+                 |
+     [VM NAT · VMnet8 · 192.168.80.0/24]
+          /                        \
+lab01-ubuntu                  lab02-windows
+10.0.2.4                       10.0.2.3
 
 ## Result
 | | Before | After |
@@ -29,5 +37,5 @@ Date: <dd.mm.2026>
 - [evidence/ipconfig-windows.txt](evidence/ipconfig-windows.txt) — Windows address
 - [evidence/ip-addr-linux.txt](evidence/ip-addr-linux.txt) — Ubuntu address
 - [evidence/ping-both-ways.txt](evidence/ping-both-ways.txt) — both directions and the internet
-- [evidence/host-memory-before.png](evidence/host-memory-before.png) — host memory, guests off
+- [evidence/host-memory-before(evidence/host-memory-before) — host memory, guests off
 - [evidence/host-memory-after.png](evidence/host-memory-after.png) — host memory, both guests overcommitted
