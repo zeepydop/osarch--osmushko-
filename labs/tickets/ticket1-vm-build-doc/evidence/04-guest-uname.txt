@@ -1,8 +1,14 @@
 
-
+commands:
 ip -br a
 uname -a
 
-ssh -p 2222 <username>@<ip host address> "uname -a" > uname-result.txt
-In File → Tools → Network Manager → NAT Networks → your network → Port Forwarding, add a rule: Host Port 2222, Guest IP = Ubuntu's address, Guest Port 22. 
-Then use ssh -p 2222 <username>@<ip host address> "ip addr" > guest-ip.txt
+to note:
+ssh -p 2222 username@120.0.0.1> "uname -a" > uname-result.txt
+Output:
+Linux ubuntu-test 7.0.0-38-generic #38-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep  4 09:04:14 UTC 2026 x86_64 GNU/Linux
+
+ssh -p 2222 username@120.0.0.1> "ip -br a" > guest-ip.txt
+Output:
+lo        UNKNOWN    120.0.0.1/8 /128
+enp0s3    UP         10.0.2.3/24 metric 100 fd17:625c1f037:2:800:27ff:feia:d276/64 fe80::00:27ffafela:d276/64
