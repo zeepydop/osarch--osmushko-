@@ -85,7 +85,7 @@ Why **NAT Network** and not the alternatives:
 
 > Why skip unattended installation: VirtualBox would otherwise install Ubuntu for you with its own choices, and you would never see the real installer. 
 > Why not pre-allocate: the disk file stays small and grows only as data is written.
-> Check: the machine `ubuntu-test` is in the list; Settings show 2048 MB RAM, 2 CPUs, 25 GB disk.
+> Check: the machine `ubuntu-test` is in the list; Settings show 1900(<2GB) MB RAM, 2 CPUs, 25 GB disk.
 
 ---
 
@@ -125,7 +125,7 @@ uname -a
 Expected: the Ubuntu version, your server name, 2 CPUs, your memory, about 25 GB disk, and an IP address on the network card.
 
 To save the output on the host, add a port-forwarding rule (VirtualBox cannot reach a NAT Network guest directly): **File → Tools → Network Manager → NAT Networks → your network → Port Forwarding**, add: Host Port `2222`, Guest IP = Ubuntu's address(10.0.2.3), Guest Port `22`. 
-
+[next text](evidence/04-guest-uname)
 
 ---
 
