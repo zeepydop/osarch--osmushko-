@@ -1,0 +1,18 @@
+osmushko@lab01-osmushko:~$ lscpu | grep -E "Model name | CPU\(s\):"
+
+CPU(s):                                  1
+Model name:                              Intel(R) Pentium(R) CPU 5405U @ 2.30GHz
+NUMA node0 CPU(s):                       0
+
+osmushko@lab01-osmushko:~$ lsblk-do NAME, MODEL, SIZE, TRAN
+
+NAME  MODEL          SIZE TRAN
+loop0                1.5M
+loop1               66.8M
+loop2               50.1M
+loop3               44.7M
+loop4                1.5M
+sda   VBOX HARDDISK   25G sata
+sre   VBOX CD-ROM   1024M ata
+
+osmushko@lab01-osmushko:~$
