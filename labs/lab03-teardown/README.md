@@ -93,9 +93,12 @@ sda   VBOX  40G  sata
 
 
 ## What did not work the first time
+* **What I saw:** When executing `wmic memorychip get Capacity, Speed, MemoryType` on the Windows host, the `MemoryType` field returned a value of `0` instead of identifying the generation (like DDR4).
+* **What it turned out to be:** The legacy `MemoryType` property in WMIC often returns `0` (Unknown) for modern DDR4 and DDR5 memory modules due to deprecation in newer Windows builds. 
+* **What I did about it:** I verified the memory standard by checking the `Speed` output (3200 MT/s, which indicates DDR4 laptop memory) and noted that using `wmic memorychip get SMBIOSMemoryType` is the correct updated query to get accurate generation codes.
 
-At least one thing. What I saw, what it turned out to be, what I did about it.
 
 ## Evidence
-
-- [evidence/](evidence/) — one line per file on what it proves
+- [evidence/photos/](evidence/photos/) — Contains manufacturer product images and specification screenshots for all 10 researched hardware components.
+- [evidence/windows-specs.txt](evidence/windows-specs.txt) — Raw command-line output showing the authentic 11th Gen i5 host CPU, dual 8 GB RAM sticks, and Samsung NVMe drive details from the Windows command prompt.
+- [evidence/linux-specs.txt](evidence/linux-specs.txt) — Raw command-line output from the VirtualBox Linux guest VM, verifying its 2 allocated virtual CPU cores and 40 GB virtual SATA drive.
