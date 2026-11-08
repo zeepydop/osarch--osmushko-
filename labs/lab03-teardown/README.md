@@ -1,5 +1,4 @@
 # Lab 3 — Teardown, and the same machine from the command line
-
 Pair:  Diana Osmushko                   Driver first half: Diana Osmushko
 Machine: Windows Laptop
 Date: 05.11.2026 - 08.11.2026
