@@ -1,1 +1,23 @@
+PS C:\WINDOWS\System32> Get-CimInstance Win32_Processor | Select-Object Name, NumberOfCores, NumberOfLogicalProcessors
+>>
+
+Name                                    NumberOfCores NumberOfLogicalProcessors
+----                                    ------------- -------------------------
+Intel(R) Pentium(R) CPU 5405U @ 2.30GHz             2                         4
+
+
+PS C:\WINDOWS\System32> Get-CimInstance Win32_PhysicalMemory | Select-Object Capacity, Speed, SMBIOSMemoryType
+>>
+
+  Capacity Speed SMBIOSMemoryType
+  -------- ----- ----------------
+4294967296  2133               26
+
+
+PS C:\WINDOWS\System32> Get-CimInstance Win32_DiskDrive | Select-Object Model, Size, MediaType
+>>
+
+Model                   Size MediaType
+-----                   ---- ---------
+RPFTJ256PDD2MWX 256052966400 Fixed hard disk media
 
