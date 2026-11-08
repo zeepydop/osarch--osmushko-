@@ -2,7 +2,7 @@
 
 Pair:  Diana Osmushko                   Driver first half: Diana Osmushko
 Machine: Windows Laptop
-Date: 05.11.2026
+Date: 05.11.2026 - 08.11.2026
 
 ## What I did
 
@@ -38,8 +38,8 @@ Date: 05.11.2026
      - Storage: Samsung 990 PRO 1 TB (M.2 NVMe)
      - Cooler: Stock AMD Wraith Stealth cooler (shipped with CPU)
      - PSU: Corsair RM750e (750 W)
-     - *Justification:* Ryzen 5 7600 fits AM5 socket; ASUS B650 board requires DDR5 which matches Kingston DDR5 RAM; M.2 slot supports NVMe Gen4 speeds.
-     - *Still needed:* Micro-ATX/ATX case, peripherals (monitor, keyboard, mouse).
+     - Justification: Ryzen 5 7600 fits AM5 socket; ASUS B650 board requires DDR5 which matches Kingston DDR5 RAM; M.2 slot supports NVMe Gen4 speeds.
+     - Still needed: Micro-ATX/ATX case, peripherals (monitor, keyboard, mouse).
    * **Build 2 (Intel LGA 1700 + DDR4)**:
      - CPU: Intel Core i5-13400
      - Motherboard: MSI PRO B760M-A WIFI DDR4 (Socket LGA 1700, B760 chipset)
@@ -47,68 +47,79 @@ Date: 05.11.2026
      - Storage: Samsung 870 EVO 1 TB (2.5" SATA)
      - Cooler: Stock Intel Laminar RM1 cooler (shipped with CPU)
      - PSU: Corsair RM750e (750 W)
-     - *Justification:* Core i5-13400 fits LGA 1700 socket; motherboard explicitly supports DDR4 matching Crucial RAM; SATA SSD connects via SATA 6Gb/s port.
-     - *Still needed:* Second PSU (if running concurrently), SATA data cable, case, peripherals.
+     - Justification: Core i5-13400 fits LGA 1700 socket; motherboard explicitly supports DDR4 matching Crucial RAM; SATA SSD connects via SATA 6Gb/s port.
+     - Still needed: Second PSU (if running concurrently), SATA data cable, case, peripherals.
 
 ---
 
 ### Part 2: Hardware Inspection via Command Line
+CPU, memory, and disk specifications from the OS command line using modern PowerShell CIM cmdlets on the host and terminal commands in the Linux guest VM.
 
-Queried CPU, memory, and disk specifications from the OS command line and saved outputs.
-
-1. Extracted CPU details on Windows:
-```cmd
-wmic cpu get Name, NumberOfCores, NumberOfLogicalProcessors
+1. Extracted CPU details on Windows (PowerShell):
+```powershell
+Get-CimInstance Win32_Processor | Select-Object Name, NumberOfCores, NumberOfLogicalProcessors
 ```
 Output:
-Name                                      NumberOfCores  NumberOfLogicalProcessors
-11th Gen Intel(R) Core(TM) i5-1135G7      4              8
+```text
+Name                                    NumberOfCores NumberOfLogicalProcessors
+----                                    ------------- -------------------------
+Intel(R) Pentium(R) CPU 5405U @ 2.30GHz             2                         4
+```
 
-2. ​Extracted Memory details on Windows:
-```wmic memorychip get Capacity, Speed, MemoryType```
+2. Extracted Memory details on Windows (PowerShell):
+```powershell
+Get-CimInstance Win32_PhysicalMemory | Select-Object Capacity, Speed, SMBIOSMemoryType
+```
 Output:
-Capacity     MemoryType  Speed
-8589934592   0           3200
-8589934592   0           3200
+```text
+  Capacity Speed SMBIOSMemoryType
+  -------- ----- ----------------
+4294967296  2133               26
+```
 
-3. Extracted Disk details on Windows:
-```wmic diskdrive get Model, Size, MediaType```
+3. Extracted Disk details on Windows (PowerShell):
+```powershell
+Get-CimInstance Win32_DiskDrive | Select-Object Model, Size, MediaType
+```
 Output:
-MediaType              Model                         Size
-Fixed hard disk media  NVMe SAMSUNG MZVL2512HCJQ-00  512110190592
+```text
+Model                   Size MediaType
+-----                   ---- ---------
+RPFTJ256PDD2MWX 256052966400 Fixed hard disk media
+```
 
 4. Extracted CPU and Disk info on Linux (VM):
-```
+```bash
 lscpu | grep -E "Model name|CPU\(s\):"
 lsblk -d -o NAME,MODEL,SIZE,TRAN
 ```
 Output:
-Model name:          11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
-CPU(s):              2
-NAME  MODEL  SIZE TRAN
-sda   VBOX  40G  sata
+```text
+CPU(s):                                  1
+Model name:                              Intel(R) Pentium(R) CPU 5405U @ 2.30GHz
+NAME  MODEL          SIZE TRAN
+sda   VBOX HARDDISK   25G sata
+```
 
 ## Result
-
 ### Command Comparison Across Operating Systems
 
-| Specification / Hardware Fact | Windows Command | Linux Command | macOS Command |
-| :--- | :--- | :--- | :--- |
-| **CPU Model Name** | `wmic cpu get Name` | `lscpu \| grep "Model name"` | `sysctl -n machdep.cpu.brand_string` |
-| **CPU Cores & Threads** | `wmic cpu get NumberOfCores, NumberOfLogicalProcessors` | `lscpu \| grep -E "^CPU\(s\):\|Core\(s\) per socket:"` | `sysctl -n hw.physicalcpu hw.logicalcpu` |
-| **Total System RAM** | `systeminfo \| findstr /C:"Total Physical Memory"` | `free -h` | `sysctl -n hw.memsize` |
-| **RAM Module Details** | `wmic memorychip get Capacity, Speed, PartNumber` | `sudo dmidecode --type memory \| grep -E "Size\|Type\|Speed"` | `system_profiler SPMemoryDataType` |
-| **Storage Drive Model & Size** | `wmic diskdrive get Model, Size` | `lsblk -d -o NAME,MODEL,SIZE,TRAN` | `diskutil list` |
-| **Filesystem / Disk Usage** | `wmic logicaldisk get Caption, FreeSpace, Size` | `df -h` | `df -h` |
+| Specification / Hardware Fact | Windows Command (PowerShell) | Linux Command (Terminal) |
+| :--- | :--- | :--- |
+| **CPU Model Name** | `Get-CimInstance Win32_Processor \| Select-Object Name` | `lscpu \| grep "Model name:"` |
+| **CPU Cores & Threads** | `Get-CimInstance Win32_Processor \| Select-Object NumberOfCores, NumberOfLogicalProcessors` | `lscpu \| grep -E "^CPU\(s\):\|Core\(s\) per socket:"` |
+| **Total System RAM** | `(Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory` | `free -h` |
+| **RAM Module Details** | `Get-CimInstance Win32_PhysicalMemory \| Select-Object Capacity, Speed, SMBIOSMemoryType` | `sudo dmidecode --type memory \| grep -E "Size\|Type\|Speed"` |
+| **Storage Drive Model & Size** | `Get-CimInstance Win32_DiskDrive \| Select-Object Model, Size, MediaType` | `lsblk -d -o NAME,MODEL,SIZE,TRAN` |
+| **Filesystem / Disk Usage** | `Get-CimInstance Win32_LogicalDisk \| Select-Object DeviceID, FreeSpace, Size` | `df -h` |
 
 
 ## What did not work the first time
-* **What I saw:** When executing `wmic memorychip get Capacity, Speed, MemoryType` on the Windows host, the `MemoryType` field returned a value of `0` instead of identifying the generation (like DDR4).
-* **What it turned out to be:** The legacy `MemoryType` property in WMIC often returns `0` (Unknown) for modern DDR4 and DDR5 memory modules due to deprecation in newer Windows builds. 
-* **What I did about it:** I verified the memory standard by checking the `Speed` output (3200 MT/s, which indicates DDR4 laptop memory) and noted that using `wmic memorychip get SMBIOSMemoryType` is the correct updated query to get accurate generation codes.
-
+* **What I saw:** When trying to execute `wmic` commands in Windows 11 PowerShell, the system threw a `CommandNotFoundException` error stating that 'wmic' is not recognized as a cmdlet or operable program.
+* **What it turned out to be:** Microsoft has deprecated and completely removed the WMIC tool from modern Windows 11 builds
+* **What I did about it:** I pivoted to modern PowerShell infrastructure and utilized `Get-CimInstance` cmdlets (`Win32_Processor`, `Win32_PhysicalMemory`, and `Win32_DiskDrive`) to successfully pull the hardware specs.
 
 ## Evidence
-- [evidence/photos/](evidence/photos/) — Contains manufacturer product images and specification screenshots for all 10 researched hardware components.
-- [evidence/windows-specs.txt](evidence/windows-specs.txt) — Raw command-line output showing the authentic 11th Gen i5 host CPU, dual 8 GB RAM sticks, and Samsung NVMe drive details from the Windows command prompt.
-- [evidence/linux-specs.txt](evidence/linux-specs.txt) — Raw command-line output from the VirtualBox Linux guest VM, verifying its 2 allocated virtual CPU cores and 40 GB virtual SATA drive.
+- [evidence/photos/](evidence/photos/) — Contains manufacturer product images for all 10 researched hardware components.
+- [evidence/windows-specs.txt](evidence/windows-specs.txt) — Raw PowerShell command-line output showing the authentic Intel Pentium 5405U host CPU, single 4 GB DDR4 RAM stick (2133 MT/s), and the 256 GB host storage drive.
+- [evidence/linux-specs-vm.txt](evidence/linux-specs-vm.txt) — Raw command-line output from the VirtualBox Linux guest VM, verifying its 1 allocated virtual CPU core and 25 GB virtual SATA drive.
