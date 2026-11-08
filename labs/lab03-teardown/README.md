@@ -18,7 +18,7 @@ Date: 05.11.2026
    * **Samsung 990 PRO 1 TB**: M.2 2280 NVMe SSD (PCIe 4.0 x4). Limits: Requires M.2 Key-M PCIe slot for full bandwidth. [Samsung Product Page](https://semiconductor.samsung.com/consumer-storage/internal-ssd/990-pro/)
    * **Samsung 870 EVO 1 TB**: 2.5-inch SATA III SSD. Limits: Interface limit of 6 Gbps (~560 MB/s), requires SATA data and power cables. [Samsung Product Page](https://semiconductor.samsung.com/consumer-storage/internal-ssd/870-evo/)
    * **Corsair RM750e (750 W)**: Fully modular ATX power supply, 80 PLUS Gold. Limits: Max 750 W load, standard ATX case mount required. [Corsair Product Page](https://www.corsair.com/us/en/p/psu/cp-9020262-na/rme-series-rm750e-fully-modular-low-noise-atx-power-supply-cp-9020262-na)
-   * **Stock Coolers (AMD Wraith Stealth / Intel Laminar RM1)**: CPU air coolers bundled in processor boxes. Limits: Wraith Stealth fits AM4/AM5 only; Laminar RM1 fits LGA 1700 only; both designed for 65W TDP.
+   * **Stock Coolers (AMD Wraith Stealth / Intel Laminar RM1)**: CPU air coolers bundled in processor boxes. Limits: Wraith Stealth fits AM4/AM5 only; Laminar RM1 fits LGA 1700 only; both designed for 65W TDP.[AMD Wraith Stealth Page](https://www.amd.com/en/products/processors/ecosystem/cpu-cooler-solutions.html), [Intel Laminar RM1 Page](https://www.intel.com/content/www/us/en/support/articles/000089190/processors/intel-core-processors.html)
 
 2. Planned two compatible builds:
    * **Build 1 (AMD AM5 + DDR5)**:
