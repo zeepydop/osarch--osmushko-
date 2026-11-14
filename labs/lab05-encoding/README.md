@@ -12,9 +12,10 @@ Date: 14.11.2026
 ## Diagnosis (made before the fix)
 - file said: `Non-ISO extended-ASCII text, with CRLF line terminators` [evidence/file-before.txt](evidence/file-before.txt)
 - First 16 bytes: `4944 3bd4 e0ec e8eb e8ff 3bc8 ecff 3bce` [evidence/hexdump-before.txt](evidence/hexdump-before.txt)
-- Encoding: `KZ-1048` — because each Cyrillic and Kazakh letter is stored as a single byte (for example, `Ә` is single byte `a3` and `і` is `b3` in `Әбдірахманова`, whereas Windows-1251 decodes `a3` as `Ј`).
 - Line ending: `CRLF` — because the first line ends with the bytes `0d 0a` (at offset `0x24`).
 - BOM: `no` — because the first bytes are `49 44` (`"ID"`), not `ef bb bf`; in the fixed file I added it because Windows Excel requires the UTF-8 BOM (`ef bb bf`) to recognize UTF-8 automatically when opening a CSV file by double-clicking.
+- Encoding: `KZ-1048` — because each Cyrillic/Kazakh letter is stored as a single byte (for example, `"А"` is the single byte `c0`, `"Ә"` is `a3`, and `"і"` is `b3` in `Әбдірахманова`, whereas Windows-1251 decodes `a3` as `Ј`).
+- Separator: `;` — because fields are separated by the single byte `3b` (semicolon).
 
 ## Fix
 ```sh
