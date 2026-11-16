@@ -60,26 +60,26 @@ sr0    1024M rom
 
 ## What I did
 
-# 1. Partition the three 1 GB disks for RAID
+### 1. Partition the three 1 GB disks for RAID
 ```
 for d in sdb sdc sdd; do
   sudo parted -s /dev/\$d mklabel gpt mkpart primary 1MiB 100% set 1 raid on
 done
 ```
-# 2. Create RAID 1 array, format, and mount
+### 2. Create RAID 1 array, format, and mount
 ```
 sudo mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sdb1 /dev/sdc1
 sudo mkfs.ext4 -L mirror /dev/md0
 sudo mkdir -p /mnt/mirror
 sudo mount /dev/md0 /mnt/mirror
 ```
-# 3. Simulate failure of sdc1 and remove it
+### 3. Simulate failure of sdc1 and remove it
 ```
 sudo mdadm /dev/md0 --fail /dev/sdc1
 sudo mdadm /dev/md0 --remove /dev/sdc1
 ```
 
-# 4. Add third disk (sdd1) to rebuild the mirror
+### 4. Add third disk (sdd1) to rebuild the mirror
 ```
 sudo mdadm /dev/md0 --add /dev/sdd1
 sudo mdadm --detail --scan | sudo tee -a /etc/mdadm/mdadm.conf
