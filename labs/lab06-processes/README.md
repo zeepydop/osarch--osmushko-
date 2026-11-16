@@ -1,24 +1,26 @@
 # Lab 6 — Live processes and memory pressure
 
-Pair:                     Driver first half:
-Machine:
-Date:
+Pair: Inzhu + Diana · Date: 16.11 · Guests: <Ubuntu version / Windows edition, RAM of each>
 
-## What I did
+## Part 1 — One process, three tools
+Process chosen: <name> — why: <one sentence>
+<the comparison table>
+### Where the tools disagree
+<at least one disagreement, with the reason>
 
-Steps, with commands in code blocks. Not prose about the steps.
+## Part 2 — Memory pressure
+Guest RAM: <…> · swap: <…>
+Steps: <the commands, in order>
+| | Before | During (worst) | After |
+| Available | | | |
+| Swap used | | | |
+What happened: <responsiveness, what happened to the process, with times>
 
-```
-<command>
-<output, trimmed>
-```
+### What the kernel did
+<the OOM line(s), quoted, and your explanation: which process, why, when>
 
-## Result
+### Windows
+<the Get-WinEvent command and its result, and your explanation>
 
 ## What did not work the first time
-
-At least one thing. What I saw, what it turned out to be, what I did about it.
-
-## Evidence
-
-- [evidence/](evidence/) — one line per file on what it proves
+<at least one real thing>
