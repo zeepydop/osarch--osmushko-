@@ -1,0 +1,9 @@
+Nov 18 18:15:04 localhost kernel: stress-ng-vm invoked oom-killer: gfp_mask=0x140dca(GFP_HIGHUSER_MOVABLE|__GFP_ZERO), order=0, oom_score_adj=1000
+Nov 18 18:15:04 localhost kernel: CPU: 0 PID: 6250 Comm: stress-ng-vm Tainted: G             L    6.8.0-45-generic #45-Ubuntu PREEMPT(voluntary)
+Nov 18 18:15:04 localhost kernel: Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Nov 18 18:15:04 localhost kernel: oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/user.slice/user-1000.slice/session-1.scope,task=stress-ng-vm,pid=6246,uid=1000
+Nov 18 18:15:04 localhost kernel: Out of memory: Killed process 6246 (stress-ng-vm) total-vm:1478348kB, anon-rss:1264252kB, file-rss:504kB, shmem-rss:16kB, UID:1000 pgtables:2488kB oom_score_adj:1000
+Nov 18 18:15:04 localhost kernel: oom_reaper: reaped process 6246 (stress-ng-vm), now anon-rss:0kB, file-rss:0kB, shmem-rss:16kB
+Nov 18 18:15:05 localhost kernel: stress-ng-vm invoked oom-killer: gfp_mask=0x140dca(GFP_HIGHUSER_MOVABLE|__GFP_ZERO), order=0, oom_score_adj=1000
+Nov 18 18:15:05 localhost kernel: Out of memory: Killed process 6250 (stress-ng-vm) total-vm:1478348kB, anon-rss:369567kB, file-rss:504kB, shmem-rss:16kB, UID:1000 pgtables:880kB oom_score_adj:1000
+Nov 18 18:15:18 localhost kernel: watchdog: BUG: soft lockup - CPU#1 stuck for 305s! [stress-ng-vm:6250]
