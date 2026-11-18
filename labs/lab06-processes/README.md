@@ -74,8 +74,8 @@ Explanation: The Windows guest never ran out of virtual memory (commit charge), 
 2. Process Explorer handle list was empty: Opening VBoxService.exe properties in Process Explorer without administrator privileges showed `<access denied>` for the User field and hid the individual handle names in the lower pane, even though the total handle count (200) was visible in Task Manager.
 
 ## Evidence
-[evidence/task-manager.png](evidence/task-manager.png) - Windows Task Manager details for VBoxService.exe.
-[evidence/process-explorer.png](evidence/process-explorer.png) - Windows Process Explorer view of VBoxService.exe and its parent.
-[evidence/htop.png](evidence/htop.png) - Ubuntu htop view of VBoxService with PPID and memory stats.
-[evidence/memory-pressure.txt](evidence/memory-pressure.txt) - Memory usage log recorded before, during, and after stress-ng.
-[evidence/kernel-log-extract.txt](evidence/kernel-log-extract.txt) - Kernel journal extract showing the OOM killer terminating stress-ng-vm.
+* [evidence/task-manager.png](evidence/task-manager.png) - Windows Task Manager details for VBoxService.exe.
+* [evidence/process-explorer.png](evidence/process-explorer.png) - Windows Process Explorer view of VBoxService.exe and its parent.
+* [evidence/htop.png](evidence/htop.png) - Ubuntu htop view of VBoxService with PPID and memory stats.
+* [evidence/memory-pressure.txt](evidence/memory-pressure.txt) - Memory usage log recorded before, during, and after stress-ng.
+* [evidence/kernel-log-extract.txt](evidence/kernel-log-extract.txt) - Kernel journal extract showing the OOM killer terminating stress-ng-vm.
