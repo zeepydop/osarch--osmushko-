@@ -3,9 +3,9 @@
 
 **Load:** The accountant works with accounting software, spreadsheets, PDF documents, email and browser tabs throughout the working day. Several office applications may be open at the same time.
 
-**Bottleneck:** Memory may become the first limitation when large spreadsheets and several applications are open. A 16 GB configuration is a reasonable starting point for ordinary accounting tasks(like having several tabs open at the same time).
+**Bottleneck:** Memory may become the first limitation when large spreadsheets and several accounting applications are open at once. 16 GB is sufficient for ordinary office workloads, but heavier multitasking may require an upgrade.
 
-**Trade-off:** I chose an Intel Core i3-12100 and integrated graphics instead of a more expensive processor or dedicated GPU.The money is better spent on sufficient memory, storage and a reliable monitor. The 24-inch Full HD IPS monitor provides a practical workspace.
+**Trade-off:** I chose the Intel Core i3-12100 with integrated graphics instead of a more expensive processor and dedicated GPU. This saves money because accounting tasks do not require high graphics performance. I accepted the 16 GB memory limit to keep the build affordable.
 
 **Main components:**
 - Intel Core i3-12100
@@ -24,9 +24,9 @@
 
 **Load:** The sales manager uses a CRM in a browser, around 30–40 browser tabs, Excel, email and video calls. These applications may run simultaneously during the working day.
 
-**Bottleneck:** Memory is the main bottleneck. Many browser tabs and video calls can consume a significant amount of RAM. With insufficient memory, the system may start swapping to the SSD and become slower.
+**Bottleneck:** Memory is the main bottleneck. Running CRM, 30–40 browser tabs, Excel and video calls simultaneously can consume significant RAM and cause swapping if memory is insufficient.
 
-**Trade-off:** I kept the Intel Core i3-12100 instead of choosing a more expensive processor and spent more on 32 GB of RAM. The CPU is sufficient for ordinary sales applications, while additional memory helps with multitasking.
+**Trade-off:** I chose the Intel Core i3-12100 instead of a more powerful Core i5 and allocated more of the budget to 32 GB RAM. The processor is sufficient for sales applications, while extra memory improves multitasking.
 
 **Main components:**
 - Intel Core i3-12100
@@ -45,10 +45,10 @@
 
 **Load:** The developer uses a code editor, Git, multiple browser windows, a local database and Docker containers. Virtual machines may also be used for testing.
 
-**Bottleneck:** Memory is likely to become the first limitation when several containers, development tools and databases run together. The 32 GB configuration provides more room for multitasking than
-a basic office computer.
+**Bottleneck:** Memory is likely to become the first limitationwhen Docker containers, databases, browsers and development tools run simultaneously. 32 GB provides room for moderate workloads.
 
-**Trade-off:** I selected the Ryzen 5 5600GT rather than a more expensive processor and did not include a dedicated GPU. Its integrated graphics are sufficient for ordinary development work. The budget is instead directed toward 32 GB RAM and a 1 TB SSD.
+**Trade-off:** I chose the Ryzen 5 5600GT instead of a more expensive Ryzen 7 processor and used its integrated graphics instead of buying a dedicated GPU. This allows more of the budget to go toward 32 GB RAM and a 1 TB SSD. The limitation is that heavy virtual-machine workloads may eventually require 64 GB RAM.
+
 
 **Main components:**
 - AMD Ryzen 5 5600GT
@@ -67,9 +67,9 @@ a basic office computer.
 
 **Load:** The designer uses Photoshop, Illustrator, Figma and large image files. Some projects may also involve basic 3D work.
 
-**Bottleneck:** Graphics performance and video memory are the main limitations for demanding visual projects. The monitor is also important because colour accuracy and resolution affect design work.
-
-**Trade-off:** I chose the Ryzen 5 5600GT with integrated Radeon graphics instead of a more expensive processor platform. This keeps the computer affordable while providing enough performance for Photoshop, Illustrator and Figma. I prioritized 32 GB of RAM, a 1 TB SSD and a larger QHD IPS monitor. The limitation is that demanding 3D rendering and GPU-intensive projects may run less smoothly.
+**Bottleneck:** Graphics performance and memory can limit work with large images and demanding visual projects. The monitor is also important because resolution and colour accuracy affect design work.
+**Trade-off:** I chose the Ryzen 5 5600GT with integrated Radeon graphics instead of purchasing a separate graphics card. I
+prioritized 32 GB RAM, a 1 TB SSD and a 27-inch QHD IPS monitor. This is suitable for ordinary Photoshop, Illustrator and Figma work, but demanding 3D rendering may be slower.
 
 **Main components:**
 - AMD Ryzen 5 5600GT
