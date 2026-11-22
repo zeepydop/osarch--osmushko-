@@ -63,7 +63,7 @@ Designer may complain first if projects involve demanding 3D rendering or comple
   each computer.
 - [budget.csv](evidence/budget.csv) — lists components, prices, vendors and price dates.
 - [evidence/pcpartpicker-links.md](evidence/pcpartpicker-links.md) — contains compatibility and
-  estimated power checks for the four builds.
+  estimated power checks for the four builds.(notice*)
 - [evidence/vendor-quotes/](evidence/vendor-quotes/) — contains dated screenshots of the
   vendor product pages used for the prices.
 
