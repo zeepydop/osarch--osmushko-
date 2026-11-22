@@ -1,4 +1,4 @@
-# Ticket 2 — Kitting out the new office | Diana Osmushko | Group 6
+# Ticket 2 — Kitting out the new office | Diana Osmushko | Group 6 | 22.11 - 23.11.26
 
 ## 1. What was asked
 ```
@@ -56,8 +56,7 @@ I would upgrade the web developer's RAM from 32 GB to 64 GB. Running several con
 A pre-built computer would save time because the vendor assembles and tests it. The company may also receive a single warranty and technical support contact. However, it would have less control over the exact components and future upgrades, and the price may be higher.
 
 **3. Who is most likely to complain about performance within a month?**
-
-The designer is the most likely to complain. The RTX 3050 with 6 GB of VRAM is an entry-level graphics card and may struggle with large projects or demanding 3D rendering. This is the main compromise I accepted to keep the total budget low.
+Designer may complain first if projects involve demanding 3D rendering or complex visual effects. The integrated Radeon graphics may not provide enough performance for these tasks. The 27-inch QHD monitor and 32 GB RAM should be sufficient for the assumed 2D design workload.
 
 ## 4. Evidence
 - [builds.md](builds.md) — explains the workload, bottleneck and trade-off for
@@ -72,3 +71,6 @@ Shop.kz product pages are used as price evidence.
 
 ## 5. What I would do differently
 I would first confirm the exact software used by the designer and accountant. This could change the GPU or operating-system choice. I would also request pre-built quotes and compare their warranty and support conditions before the company makes its final purchase.
+
+## AI use
+AI was used for help in finding right components for each employee (links and screenshots were done by me)
