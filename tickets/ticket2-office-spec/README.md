@@ -28,9 +28,7 @@ I assume the computers should remain useful for approximately four years. This m
 - Accountant: Accounting software, Excel and office applications. Windows 11 Home is selected because many commonly used accounting applications in Kazakhstan are designed for Windows.
 - Sales manager: CRM, browser applications, Excel and video conferencing. Windows 11 Home is suitable.
 - Web developer: VS Code, Git, browsers, databases and Docker. Ubuntu LTS is selected because it supports common development tools and is free and open-source.
-- Designer: Photoshop, Illustrator and Figma. Windows 11 Home is selected, with an NVIDIA graphics card for GPU-accelerated tasks.
-
-I would confirm the exact applications and their system requirements before buying the computers.
+- Designer: Photoshop, Illustrator and Figma. Windows 11 Home is selected. The build uses integrated Radeon graphics rather than a dedicated GPU, which keeps the cost lower. This is suitable for mainly 2D design, but demanding 3D rendering may require a future graphics-card upgrade.
 
 ### 6. What would I ask Daniyar, and what did I assume?
 I would ask Daniyar:
@@ -44,36 +42,22 @@ I would ask Daniyar:
 Since these details were not provided, I assumed ordinary office workloads for the accountant and sales manager, moderate development workloads, and mainly 2D design work. I also assumed a four-year service life, existing peripherals and network equipment, and that Windows 11 Home is sufficient for the three Windows computers.
 
 ## 3. What I did
-I chose each computer according to its workload instead of using the
-same configuration for everyone. All four builds have at least 16 GB
-of RAM, a 1 TB SSD, a monitor and an operating system.
+I chose each computer according to its workload instead of using the same configuration for everyone. All four builds have at least 16 GB of RAM, a 1 TB SSD, a monitor and an operating system.
 
-The estimated total after correcting the two office SSDs is
-2,073,670 KZT, leaving approximately 926,330 KZT from the budget.
-The detailed component prices and vendor links are in [budget.csv](evidence/budget.csv).
-The workload reasoning is in [builds.md](builds.md).
+The estimated total after correcting the two office SSDs is 2,073,670 KZT, leaving approximately 926,330 KZT from the budget. The detailed component prices and vendor links are in [budget.csv](evidence/budget.csv). The workload reasoning is in [builds.md](builds.md).
 
 ### Director's questions
 **1. Which computer would I upgrade first after eighteen months?**
 
-I would upgrade the web developer's RAM from 32 GB to 64 GB.
-Running several containers, a local database and virtual machines
-together may use more memory as projects become larger. More RAM would
-help avoid swapping and keep development tools responsive.
+I would upgrade the web developer's RAM from 32 GB to 64 GB. Running several containers, a local database and virtual machines together may use more memory as projects become larger. More RAM would help avoid swapping and keep development tools responsive.
 
 **2. What if the company bought pre-built computers instead?**
 
-A pre-built computer would save time because the vendor assembles and
-tests it. The company may also receive a single warranty and technical
-support contact. However, it would have less control over the exact
-components and future upgrades, and the price may be higher.
+A pre-built computer would save time because the vendor assembles and tests it. The company may also receive a single warranty and technical support contact. However, it would have less control over the exact components and future upgrades, and the price may be higher.
 
 **3. Who is most likely to complain about performance within a month?**
 
-The designer is the most likely to complain. The RTX 3050 with 6 GB
-of VRAM is an entry-level graphics card and may struggle with large
-projects or demanding 3D rendering. This is the main compromise I
-accepted to keep the total budget low.
+The designer is the most likely to complain. The RTX 3050 with 6 GB of VRAM is an entry-level graphics card and may struggle with large projects or demanding 3D rendering. This is the main compromise I accepted to keep the total budget low.
 
 ## 4. Evidence
 - [builds.md](builds.md) — explains the workload, bottleneck and trade-off for
@@ -87,9 +71,4 @@ accepted to keep the total budget low.
 Shop.kz product pages are used as price evidence.
 
 ## 5. What I would do differently
-I would first confirm the exact software used by the designer and
-accountant. This could change the GPU or operating-system choice.
-I would also request pre-built quotes and compare their warranty and
-support conditions before the company makes its final purchase.
-**Why four identical machines is wrong:**  
-Buying four identical computers forces an unacceptable compromise across different workloads. An accountant runs 1C and spreadsheets that require zero 3D graphics power, whereas a designer relies heavily on GPU acceleration and a color-accurate monitor. Buying identical mid-range machines wastes budget on unused graphics hardware for office roles while leaving the developer and designer underpowered and bottlenecked from day one.
+I would first confirm the exact software used by the designer and accountant. This could change the GPU or operating-system choice. I would also request pre-built quotes and compare their warranty and support conditions before the company makes its final purchase.
