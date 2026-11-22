@@ -1,0 +1,43 @@
+﻿role;component;model ;price_kzt;source;date
+accountant;CPU;Intel Core i3-12100 OEM;64800;https://shop.kz/offer/protsessor-intel-core-i3-12100-lga1700-oem/;22.11.2026
+accountant;Motherboard;MSI PRO H610M-E DDR4;34590;https://shop.kz/offer/materinskaya-plata-msi-pro-h610m-e-ddr4-lga1700/;22.11.2026
+accountant;RAM;Patriot 16GB DDR4 3200 (2×8GB);61990;https://shop.kz/offer/ddr-4-udimm-16-gb-3200-mhz-patriot-signature-line-2x8gb-kit-box-psd416g3200k/;22.11.2026
+accountant;SSD;Dahua 512GB SATA SSD;46990;https://shop.kz/offer/ssd-nakopitel-512-gb-dahua-c800as512g-2-5-sata-iii/;22.11.2026
+accountant;PSU;MSI MAG A550BN 550W;22590;https://shop.kz/offer/blok-pitaniya-atx-550-w-msi-mag-a550bn/;22.11.2026
+accountant;Case;Ocypus Gamma C54;16590;https://shop.kz/offer/korpus-ocypus-gamma-c54-wh-white/;22.11.2026
+accountant;CPU Cooler;DeepCool Theta 31 PWM;5790;https://shop.kz/offer/kuler-deepcool-theta-31-pwm-lga1700/;22.11.2026
+accountant;Monitor;iiyama ProLite 24″ IPS Full HD;65990;https://shop.kz/offer/monitor-24-iiyama-prolite-xu2493hsu-b7-black/;22.11.2026
+accountant;OS;Windows 11 Home USB;82990;https://shop.kz/offer/microsoft-windows-11-home-64-bit-usb/;22.11.2026
+total;;;402320;;
+sales;CPU;Intel Core i3-12100 OEM;64800;https://shop.kz/offer/protsessor-intel-core-i3-12100-lga1700-oem/;22.11.2026
+sales;Motherboard;MSI PRO H610M-E DDR4;34590;https://shop.kz/offer/materinskaya-plata-msi-pro-h610m-e-ddr4-lga1700/;22.11.2026
+sales;RAM;Hiksemi 32GB DDR4 3200 (2×16GB);139990;https://shop.kz/offer/ddr-4-udimm-32-gb-3200-mhz-hiksemi-sword-rgb-2x-16-gb-kit-box-hsc432u32b5/;22.11.2026
+sales;SSD;Dahua 512GB SATA SSD;46990;https://shop.kz/offer/ssd-nakopitel-512-gb-dahua-c800as512g-2-5-sata-iii/;22.11.2026
+sales;PSU;MSI MAG A550BN 550W;22590;https://shop.kz/offer/blok-pitaniya-atx-550-w-msi-mag-a550bn/;22.11.2026
+sales;Case;Ocypus Gamma C54;16590;https://shop.kz/offer/korpus-ocypus-gamma-c54-wh-white/;22.11.2026
+sales;CPU Cooler;DeepCool Theta 31 PWM;5790;https://shop.kz/offer/kuler-deepcool-theta-31-pwm-lga1700/;22.11.2026
+sales;Monitor;iiyama ProLite 24″ IPS Full HD;65990;https://shop.kz/offer/monitor-24-iiyama-prolite-xu2493hsu-b7-black/;22.11.2026
+sales;OS;Windows 11 Home USB;82990;https://shop.kz/offer/microsoft-windows-11-home-64-bit-usb/;22.11.2026
+total;;;480320;;
+web-developer;CPU;AMD Ryzen 5 5600GT OEM;95990;https://shop.kz/offer/protsessor-amd-ryzen-5-5600gt-am4-oem/;22.11.2026
+web-developer;Motherboard;Gigabyte A520M DS3H V2;42990;https://shop.kz/offer/materinskaya-plata-gigabyte-a520m-ds3h-v2-am4/;22.11.2026
+web-developer;RAM;Hiksemi 32GB DDR4 3200 (2×16GB);139990;https://shop.kz/offer/ddr-4-udimm-32-gb-3200-mhz-hiksemi-sword-rgb-2x-16-gb-kit-box-hsc432u32b5/;22.11.2026
+web-developer;SSD;Hiksemi 1TB M.2 SATA SSD;66990;https://shop.kz/offer/ssd-nakopitel-1-tb-hiksemi-hs-ssd-wave-n-m-2-sata-iii/;22.11.2026
+web-developer;PSU;MSI MAG A550BN 550W;22590;https://shop.kz/offer/blok-pitaniya-atx-550-w-msi-mag-a550bn/;22.11.2026
+web-developer;Case;Ocypus Gamma C54;16590;https://shop.kz/offer/korpus-ocypus-gamma-c54-wh-white/;22.11.2026
+web-developer;CPU Cooler;DeepCool AG300;6190;https://shop.kz/offer/kuler-deepcool-ag300/;22.11.2026
+web-developer;Monitor;iiyama ProLite 24″ IPS Full HD;65990;https://shop.kz/offer/monitor-24-iiyama-prolite-xu2493hsu-b7-black/;22.11.2026
+web-developer;OS;Ubuntu LTS;0;https://ubuntu.com/download/desktop;22.11.2026
+total;;;457320;;
+designer;CPU;AMD Ryzen 5 5600GT OEM;95990;https://shop.kz/offer/protsessor-amd-ryzen-5-5600gt-am4-oem/;22.11.2026
+designer;Motherboard;Gigabyte A520M DS3H V2;42990;https://shop.kz/offer/materinskaya-plata-gigabyte-a520m-ds3h-v2-am4/;22.11.2026
+designer;RAM;Hiksemi 32GB DDR4 3200 (2×16GB);139990;https://shop.kz/offer/ddr-4-udimm-32-gb-3200-mhz-hiksemi-sword-rgb-2x-16-gb-kit-box-hsc432u32b5/;22.11.2026
+designer;SSD;Hiksemi 1TB M.2 SATA SSD;66990;https://shop.kz/offer/ssd-nakopitel-1-tb-hiksemi-hs-ssd-wave-n-m-2-sata-iii/;22.11.2026
+designer;PSU;MSI MAG A550BN 550W;22590;https://shop.kz/offer/blok-pitaniya-atx-550-w-msi-mag-a550bn/;22.11.2026
+designer;Case;Ocypus Gamma C54;16590;https://shop.kz/offer/korpus-ocypus-gamma-c54-wh-white/;22.11.2026
+designer;CPU Cooler;DeepCool AG300;6190;https://shop.kz/offer/kuler-deepcool-ag300/;22.11.2026
+designer;Monitor;AOC 27″ QHD IPS;219990;https://shop.kz/offer/monitor-27-aoc-q27v5cw-bk-black/;22.11.2026
+designer;OS;Windows 11 Home USB;82990;https://shop.kz/offer/microsoft-windows-11-home-64-bit-usb/;22.11.2026
+total;;;694310;;
+grand total;;;2034270;;
+left;;;965730;;
